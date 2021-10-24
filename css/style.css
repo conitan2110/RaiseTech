@@ -74,6 +74,11 @@ img {
 .header-title p span {
   font-size: 1.8rem;
 }
+@media screen and (max-width: 1280px) {
+  .header-title p {
+    display: none;
+  }
+}
 
 .global-nav {
   line-height: 70px;
@@ -85,6 +90,11 @@ img {
   display: block;
   padding: 0px 15px;
   height: 70px;
+}
+@media screen and (max-width: 1260px) {
+  .global-nav a {
+    padding: 0px 10px;
+  }
 }
 
 .menu-drop:hover, .menu-drop:active, .menu-not-drop:hover, .menu-not-drop:active {
@@ -110,17 +120,15 @@ img {
   height: 58px;
   line-height: 58px;
 }
-.sub-menu a {
+.sub-menu li a {
   color: #131d34;
   background: #e9f8fb;
-  padding-right: 58px;
+  padding-right: 60px;
   height: 58px;
 }
-.sub-menu a:hover {
+.sub-menu li a:hover {
   color: #2498b3;
   background: #fff;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 .info {
@@ -203,11 +211,5 @@ img {
 .area-black {
   height: 230px;
   background: #000;
-}
-
-@media (max-width: 1261px) {
-  .header-title > p {
-    visibility: hidden;
-  }
 }
 /*# sourceMappingURL=style.css.map */
