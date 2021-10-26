@@ -12,7 +12,7 @@ $break-point: (
     }
 }
 // メディアクエリ（個別指定）
-@mixin mq-free( $key ) {
+@mixin max-width( $key ) {
     @media ( max-width: $key ) {
         @content;
     }
@@ -30,6 +30,13 @@ body {
     color: #121212;
     box-sizing: border-box;
     padding-top: 70px;
+    @include max-width(1200px) {
+        padding-top: 50px;
+    }
+}
+main {
+    width: 100%;
+    align-items: center;
 }
 a {
     text-decoration: none;
@@ -60,14 +67,22 @@ img {
     left: 0;
     z-index: 1;
     background: #fff;
+    // ↓メインメニューが消えると同時にヘッダー高さ縮める
+    @include max-width(1200px) {
+        height: 50px;
+    }
 }
 .header-title {
     display: flex;
     align-items: center;
     img {
-        width: 157px;
+        width: auto;
         height: 33px;
         margin-left: 21px;
+        @include max-width(1200px) {
+            height: 30px;
+            margin-left: 10px;
+        }
     }
     p {
         margin-left: 16px;
@@ -77,7 +92,7 @@ img {
         span {
             font-size: 1.8rem;
         }
-        @include mq-free(1280px) {
+        @include max-width(1280px) {
             display: none;
         }
     }
@@ -85,7 +100,7 @@ img {
 .global-nav {
     line-height: 70px;
     display: flex;
-    @include mq-free(1200px) {
+    @include max-width(1200px) {
         display: none;
     }
     li {
@@ -94,7 +109,7 @@ img {
             align-items: center;
             padding: 0px 15px;
             height: 70px;
-            @include mq-free(1260px) {
+            @include max-width(1260px) {
                 padding: 0px 10px;
             }
         }
@@ -175,7 +190,6 @@ img {
     }
 }
 .recommend {
-    max-width: 65%;
     margin: 0 auto;
     position: absolute;
     top: 452px;
@@ -183,15 +197,23 @@ img {
     right: 0;
     ul {
         display: flex;
-        margin: 0 auto;
-        @include mq-free(768px) {
+        justify-content: center;
+        @include max-width(767px) {
             flex-direction: column;
             align-items: center;
         }
     }
     li {
-        width: 33%;
+        width: 229px;
         margin: 0 50px;
+        @include max-width(1078px) {
+            width: 29.33%;
+            margin: 0 2%;
+        }
+        @include max-width(767px) {
+            width: auto;
+            margin-bottom: 2.5em;
+        }
     }
     h2,p {
         color: #fff;
@@ -202,16 +224,17 @@ img {
     }
 }
 .icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
     width: 230px;
     height: 230px;
     background: #fff;
     border: #000 solid 6px;
     border-radius: 50%;
-    margin: 0 auto;
-    text-align: center;
-    line-height: 280px;
     i {
-        font-size: 10rem;
+        font-size: 100px;
         font-weight: 700;
     }
 }
