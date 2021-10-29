@@ -272,4 +272,7 @@ img {
     @include max-width(767px) {
         height: 1168px;
     }
+    @include max-width(623px) {
+        height: 1250px;
+    }
 }

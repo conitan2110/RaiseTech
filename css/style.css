@@ -318,4 +318,9 @@ img {
     height: 1168px;
   }
 }
+@media (max-width: 623px) {
+  .area-black {
+    height: 1250px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
