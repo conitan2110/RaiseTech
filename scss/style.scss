@@ -136,8 +136,8 @@ img {
     li {
         white-space: nowrap;   //自動折り返しなし
         font-weight: 400;
-        height: 58px;
-        line-height: 58px;
+        height: 57.2px;
+        line-height: 57.2px;
         a {
             color: #131d34;
             background: #e9f8fb;
@@ -231,7 +231,7 @@ img {
         width: 229px;
         margin: 0 50px;
         @include max-width(1078px) {
-            width: 29.33%;
+            width: 29%;
             margin: 0 2%;
         }
         @include max-width(767px) {
