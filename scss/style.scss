@@ -111,7 +111,7 @@ img {
     // ボタン内側
     span {
         display: inline-block;
-        transition: all .3s;  //アニメーション設定
+        transition: all .2s;  //アニメーション設定
         position: absolute;
         left: 14px;
         width: 46%;
@@ -149,7 +149,7 @@ img {
             background: #fff;
             top: 30px;
             left: 14px;
-            transform: translateY(-6px) rotate(45deg);
+            transform: translateY(-6px) rotate(-135deg);
             width: 46%;
         }
     }
