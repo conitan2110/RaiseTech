@@ -100,7 +100,9 @@ img {
 
 // ハンバーガーボタン
 .menu-btn {
+    cursor: pointer;
     position: relative;  // ボタン内側の基点
+    z-index: 200;
     transition: all .4s;  //アニメーション設定
     background: #fff;
     width: 50px;
@@ -173,7 +175,16 @@ input[type="checkbox"] {
     line-height: 70px;
     display: flex;
     @include max-width(1200px) {
-        display: none;
+        display: none; // 一時的にコメント
+        // display: list-item;
+        position: absolute;
+        top: 40px;  // リスト1番目のpadding-leftが不要なため、50px→40px
+        left: 0;
+        background: #fff;
+        width: 100%;
+        &>li:last-of-type {
+            display: none;  // 受講お申し込みは非表示
+        }
     }
     li {
         a {
@@ -182,7 +193,12 @@ input[type="checkbox"] {
             padding: 0px 15px;
             height: 70px;
             @include max-width(1260px) {
-                padding: 0px 10px;
+                padding: 0 10px;
+            }
+            @include max-width(1200px) {
+                padding: 10px;
+                height: auto;
+                line-height: 1.7;
             }
         }
     }
@@ -208,15 +224,16 @@ input[type="checkbox"] {
     li {
         white-space: nowrap;   //自動折り返しなし
         font-weight: 400;
-        height: 57.2px;
-        line-height: 57.2px;
+        // height: 57.2px;
+        // line-height: 57.2px;
         a {
             color: #131d34;
             background: #e9f8fb;
-            padding-right: 60px;
-            height: 58px;
-            // padding: 15px 60px 15px 15px;
-            // height: auto;
+            // padding-right: 60px;
+            // height: 58px;
+            padding: 15px 60px 15px 15px;
+            height: auto;
+            line-height: 1.7;
             &:hover {
                 color: #2498b3;
                 background: #fff;
