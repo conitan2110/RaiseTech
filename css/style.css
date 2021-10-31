@@ -182,6 +182,9 @@ img {
 }
 @media (max-width: 1200px) {
   .global-nav {
+    display: none;
+  }
+  .global-nav.open {
     display: list-item;
     position: absolute;
     top: 40px;
@@ -189,7 +192,7 @@ img {
     background: #fff;
     width: 100%;
   }
-  .global-nav > li:last-of-type {
+  .global-nav.open > li:last-of-type {
     display: none;
   }
 }
@@ -222,9 +225,6 @@ img {
 
 .has-menu {
   position: relative;
-}
-.has-menu:hover .sub-menu {
-  display: block;
 }
 @media (max-width: 1200px) {
   .has-menu::before {

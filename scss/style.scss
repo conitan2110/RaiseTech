@@ -166,15 +166,17 @@ img {
     line-height: 70px;
     display: flex;
     @include max-width(1200px) {
-        // display: none; // 一時的にコメント
-        display: list-item;
-        position: absolute;
-        top: 40px;  // リスト1番目のpadding-leftが不要なため、50px→40px
-        left: 0;
-        background: #fff;
-        width: 100%;
-        &>li:last-of-type {
-            display: none;  // 受講お申し込みは非表示
+        display: none; // 一時的にコメント
+        &.open {
+            display: list-item;
+            position: absolute;
+            top: 40px;  // リスト1番目のpadding-leftが不要なため、50px→40px
+            left: 0;
+            background: #fff;
+            width: 100%;
+            &>li:last-of-type {
+                display: none;  // 受講お申し込みは非表示
+            }
         }
     }
     li {
@@ -201,11 +203,11 @@ img {
 }
 .has-menu {
     position: relative;
-    &:hover {
-        .sub-menu {
-            display: block;
-        }
-    }
+    // &:hover {
+    //     .sub-menu {
+    //         display: block;
+    //     }
+    // }
     @include max-width(1200px) {
         &::before {
             display: block;
