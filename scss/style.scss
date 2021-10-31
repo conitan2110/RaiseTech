@@ -110,6 +110,10 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
+    @include max-width(1200px) {
+        display: block;
+    }
     // ボタン内側
     span {
         display: inline-block;
@@ -131,12 +135,12 @@ img {
             height: 2.5px;
         }
     }
-    // activeクラスが付与されると線が回転して×に
-    &.active {
+    // openクラスが付与されると線が回転して×に
+    &.open {
         transition: all .3s;  //アニメーション設定
         background: #2498b3;
     }
-    &.active span {
+    &.open span {
         &:nth-of-type(1) {
             background: #fff;
             top: 18px;
@@ -156,27 +160,14 @@ img {
         }
     }
 }
-.open,
-.close {
-    display: none;
-}
-input[type="checkbox"] {
-    position: absolute;
-    right: -50vw;
-}
-.open {
-    @include max-width(1200px) {
-        display: block;
-    }
-}
 
 // メニュー
 .global-nav {
     line-height: 70px;
     display: flex;
     @include max-width(1200px) {
-        display: none; // 一時的にコメント
-        // display: list-item;
+        // display: none; // 一時的にコメント
+        display: list-item;
         position: absolute;
         top: 40px;  // リスト1番目のpadding-leftが不要なため、50px→40px
         left: 0;
@@ -213,6 +204,30 @@ input[type="checkbox"] {
     &:hover {
         .sub-menu {
             display: block;
+        }
+    }
+    @include max-width(1200px) {
+        &::before {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 13px;
+            width: 24px;
+            height: 2px;
+            margin-top: -1px;
+            background: #121212;
+        }
+        &::after {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 24px;
+            width: 2px;
+            height: 24px;
+            margin-top: -12px;
+            background: #121212;
         }
     }
 }
