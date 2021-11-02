@@ -166,17 +166,23 @@ img {
     line-height: 70px;
     display: flex;
     @include max-width(1200px) {
-        display: none; // 一時的にコメント
+        // visibility: hidden;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background: #fff;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        transition: .5s;  //アニメーション設定
+        &>li:last-of-type {
+            display: none;  // 受講お申し込みは非表示
+        }
         &.open {
-            display: list-item;
-            position: absolute;
-            top: 40px;  // リスト1番目のpadding-leftが不要なため、50px→40px
-            left: 0;
-            background: #fff;
-            width: 100%;
-            &>li:last-of-type {
-                display: none;  // 受講お申し込みは非表示
-            }
+            flex-flow: column;
+            // visibility: visible;
+            overflow: visible;
+            height: auto;
         }
     }
     li {
@@ -199,6 +205,9 @@ img {
 .menu-drop,.menu-not-drop {
     &:hover,&:active {
         background-color: #d4f1f8;
+        @include max-width(1200px) {
+            background-color: #e9f8fb;
+        }
     }
 }
 .has-menu {
@@ -231,6 +240,9 @@ img {
             margin-top: -12px;
             background: #121212;
         }
+        &:hover::after {
+            display: none;
+        }
     }
 }
 .sub-menu {
@@ -238,16 +250,21 @@ img {
     position: absolute;
     top: 70px;
     left: 0;
+    // ↓ ここテキトー
+    @include max-width(1200px) {
+        position: absolute;
+        top: 47.2px;
+        left: 0;
+        background: #fff;
+        width: 100%;
+        z-index: 1;
+    }
     li {
         white-space: nowrap;   //自動折り返しなし
         font-weight: 400;
-        // height: 57.2px;
-        // line-height: 57.2px;
         a {
             color: #131d34;
             background: #e9f8fb;
-            // padding-right: 60px;
-            // height: 58px;
             padding: 15px 60px 15px 15px;
             height: auto;
             line-height: 1.7;
