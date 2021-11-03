@@ -182,6 +182,10 @@ img {
 }
 @media (max-width: 1200px) {
   .global-nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
     position: absolute;
     top: 50px;
     left: 0;
@@ -189,17 +193,13 @@ img {
     width: 100%;
     height: 0;
     overflow: hidden;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
   }
   .global-nav > li:last-of-type {
     display: none;
   }
   .global-nav.open {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column;
-            flex-flow: column;
     overflow: visible;
     height: auto;
   }
@@ -232,7 +232,7 @@ img {
 }
 @media (max-width: 1200px) {
   .menu-drop:hover, .menu-drop:active, .menu-not-drop:hover, .menu-not-drop:active {
-    background-color: #e9f8fb;
+    background-color: #f3fafb;
   }
 }
 
@@ -240,7 +240,7 @@ img {
   position: relative;
 }
 @media (max-width: 1200px) {
-  .has-menu::before {
+  .has-menu a::before {
     display: block;
     content: "";
     position: absolute;
@@ -251,7 +251,7 @@ img {
     margin-top: -1px;
     background: #121212;
   }
-  .has-menu::after {
+  .has-menu a::after {
     display: block;
     content: "";
     position: absolute;
@@ -262,9 +262,6 @@ img {
     margin-top: -12px;
     background: #121212;
   }
-  .has-menu:hover::after {
-    display: none;
-  }
 }
 
 .sub-menu {
@@ -272,16 +269,6 @@ img {
   position: absolute;
   top: 70px;
   left: 0;
-}
-@media (max-width: 1200px) {
-  .sub-menu {
-    position: absolute;
-    top: 47.2px;
-    left: 0;
-    background: #fff;
-    width: 100%;
-    z-index: 1;
-  }
 }
 .sub-menu li {
   white-space: nowrap;
@@ -297,6 +284,28 @@ img {
 .sub-menu li a:hover {
   color: #2498b3;
   background: #fff;
+}
+@media (max-width: 1200px) {
+  .sub-menu {
+    top: 47.2px;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    z-index: 1;
+  }
+  .sub-menu.open {
+    position: static;
+  }
+  .sub-menu.open a {
+    background: #fff;
+    padding: 10px 10px 10px 25px;
+    height: auto;
+    line-height: 1.7;
+  }
+  .sub-menu.open a:hover {
+    color: #131d34;
+    background: #f3fafb;
+  }
 }
 
 .info {

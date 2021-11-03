@@ -2,7 +2,18 @@ $(function(){
   $(".menu-btn").on('click', function(){
       $(this).toggleClass('open');
       $(".global-nav").toggleClass('open');
+      // $(".has-menu").toggleClass('open');
+      $(".sub-menu").toggleClass('open');
       // $(".global-nav").slideToggle(200);
+      // $(".global-nav").slideDown(200);
+  });
+
+  $(".has-menu").hover(function(){
+    $("ul:not(:animated)", this).slideDown(200);
+    $(this).addClass('open');
+  }, function(){
+    $("ul.sub-menu",this).slideUp(0);
+    $(this).removeClass('open');
   });
 
   // $(".has-menu>a").off('click');  // has-menuクラスがついたaタグのonイベントを複数登録を避ける為offにして一旦初期状態へ
@@ -17,10 +28,4 @@ $(function(){
   //     // $(parentElem).children('ul').slideDown(100);
   //       return false;  // リンクの無効化
   //     });
-
-  $(".has-menu").hover(function(){
-    $("ul:not(:animated)", this).slideDown(200);
-  }, function(){
-    $("ul.sub-menu",this).slideUp(0);
-  });
 });
