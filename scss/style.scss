@@ -166,23 +166,22 @@ img {
     line-height: 70px;
     display: flex;
     @include max-width(1200px) {
+        display: none;
         flex-flow: column;
         position: absolute;
         top: 50px;
         left: 0;
         background: #fff;
         width: 100%;
-        height: 0;
-        overflow: hidden;
-        transition: all .3s;  //アニメーション設定
+        height: auto;
+        // overflow: hidden;
+        // transition: all .3s;  //アニメーション設定
         &>li:last-of-type {
             display: none;  // 受講お申し込みは非表示
         }
-        &.open {
-            overflow: visible;
-            // height: 283.2px;
-            height: auto;
-        }
+        // &.close {
+        //     display: flex;
+        // }
     }
     li {
         a {

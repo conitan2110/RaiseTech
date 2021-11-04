@@ -182,6 +182,7 @@ img {
 }
 @media (max-width: 1200px) {
   .global-nav {
+    display: none;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-flow: column;
@@ -191,17 +192,10 @@ img {
     left: 0;
     background: #fff;
     width: 100%;
-    height: 0;
-    overflow: hidden;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
+    height: auto;
   }
   .global-nav > li:last-of-type {
     display: none;
-  }
-  .global-nav.open {
-    overflow: visible;
-    height: auto;
   }
 }
 .global-nav li a {

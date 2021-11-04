@@ -1,13 +1,34 @@
 $(function(){
+  // ハンバーガーボタンをクリックしたときの処理
   $(".menu-btn").on('click', function(){
       $(this).toggleClass('open');
       $(".global-nav").toggleClass('open');
-      // $(".has-menu").toggleClass('open');
+      if ( $(".global-nav").hasClass('open') ){
+        $(".global-nav").removeClass('close');
+      } else {
+        $(".global-nav").addClass('close');
+      }
+      $(".global-nav").slideToggle(200);
       $(".sub-menu").toggleClass('open');
-      // $(".global-nav").slideToggle(200);
-      // $(".global-nav").slideDown(200);
   });
 
+  // 画面がリサイズされたときの処理
+  $(window).resize(function(){
+    $(".menu-btn").removeClass('open');
+    $(".sub-menu").removeClass('open');
+    var winW = $(window).width();
+    if (winW <= 1200) {
+      $(".global-nav.open").slideUp(200);
+      $(".global-nav").addClass('close');
+    } else {
+      $(".global-nav").removeClass('close');
+      // $(".global-nav").show();  // ←縦並びになってしまうので×
+      // $(".global-nav").css('display', 'flex');  // ←常に出てしまうので×
+    }
+    $(".global-nav").removeClass('open');
+  });
+
+  // メニューをホバーしたときの処理
   $(".has-menu").hover(function(){
     $("ul:not(:animated)", this).slideDown(200);
     $(this).addClass('open');
