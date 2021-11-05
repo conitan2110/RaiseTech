@@ -81,6 +81,8 @@ img {
   width: auto;
   height: 33px;
   margin-left: 21px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
 }
 @media (max-width: 1200px) {
   .header-title img {
@@ -207,6 +209,8 @@ img {
           align-items: center;
   padding: 0px 15px;
   height: 70px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
 }
 @media (max-width: 1260px) {
   .global-nav li a {

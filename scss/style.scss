@@ -79,6 +79,7 @@ img {
         width: auto;
         height: 33px;
         margin-left: 21px;
+        transition: all .4s;  //アニメーション設定
         @include max-width(1200px) {
             height: 30px;
             margin-left: 10px;
@@ -179,9 +180,6 @@ img {
         &>li:last-of-type {
             display: none;  // 受講お申し込みは非表示
         }
-        // &.close {
-        //     display: flex;
-        // }
     }
     li {
         a {
@@ -189,6 +187,7 @@ img {
             align-items: center;
             padding: 0px 15px;
             height: 70px;
+            transition: all .4s;  //アニメーション設定　ここから確認
             @include max-width(1260px) {
                 padding: 0 10px;
             }
