@@ -3,11 +3,6 @@ $(function(){
   $(".menu-btn").on('click', function(){
       $(this).toggleClass('open');
       $(".global-nav").toggleClass('open');
-      // if ( $(".global-nav").hasClass('open') ){
-      //   $(".global-nav").removeClass('close');
-      // } else {
-      //   $(".global-nav").addClass('close');
-      // }
       $(".global-nav").slideToggle(200);
       $(".sub-menu").toggleClass('open');
   });
@@ -18,13 +13,9 @@ $(function(){
     $(".sub-menu").removeClass('open');
     var winW = $(window).width();
     if (winW <= 1200) {
-      // $(".global-nav").addClass('open');
-      // $(".global-nav.open").slideDown(200);
       $(".global-nav.open").slideUp(200);  // .openは必要（これがないとPCサイズになる時おかしい）
-      // $(".global-nav").addClass('close');
     } else {
-      // $(".global-nav").removeClass('close');
-      window.location = window.location;
+      $('.global-nav').removeAttr('style');  // style属性を削除
     }
     $(".global-nav").removeClass('open');
   });
@@ -38,3 +29,13 @@ $(function(){
     $(this).removeClass('open');
   });
 });
+
+
+// 以下、ボツコード -------------------------------
+      // if ( $(".global-nav").hasClass('open') ){
+      //   $(".global-nav").removeClass('close');
+      // } else {
+      //   $(".global-nav").addClass('close');
+      // }
+
+      // window.location = window.location;

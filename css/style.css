@@ -335,6 +335,8 @@ img {
   top: 80px;
   left: 0;
   right: 0;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
 }
 .info-wrap img {
   width: 280px;
@@ -342,12 +344,16 @@ img {
 }
 .info-wrap p {
   margin: 8px 0px 28px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 .info-wrap a {
   font-size: 1.8rem;
   display: inline-block;
   padding: 18px 37px;
   border-radius: 5px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 @media (max-width: 767px) {
   .info-wrap {
