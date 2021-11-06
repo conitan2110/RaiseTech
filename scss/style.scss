@@ -1,17 +1,6 @@
 @charset "UTF-8";
 
-// レスポンシブ対応 --------------------------------
-$break-point: (
-    'sp': 599px,
-    'tablet': 1024px,
-);
-// メディアクエリ（デバイス別）←未使用
-@mixin mq( $key ) {
-    @media ( max-width: map-get( $break-point, $key )) {
-        @content;
-    }
-}
-// メディアクエリ（個別指定）
+// メディアクエリ
 @mixin max-width( $key ) {
     @media ( max-width: $key ) {
         @content;
@@ -67,7 +56,7 @@ img {
     left: 0;
     z-index: 100;
     background: #fff;
-    // ↓メインメニューが消えると同時にヘッダー高さ縮める（アニメーションなし）
+    // ↓メインメニューが消えると同時にヘッダー高さを縮める（アニメーションなし）
     @include max-width(1200px) {
         height: 50px;
     }
@@ -175,8 +164,6 @@ img {
         background: #fff;
         width: 100%;
         height: auto;
-        // overflow: hidden;
-        // transition: all .3s;  //アニメーション設定
         &>li:last-of-type {
             display: none;  // 受講お申し込みは非表示
         }
@@ -279,7 +266,6 @@ img {
             }
         }
     }
-    // ↓ ここテキトー
     @include max-width(1200px) {
         top: 47.2px;
         left: 0;
@@ -342,7 +328,7 @@ img {
         display: inline-block;
         padding: 18px 37px;
         border-radius: 5px;
-        transition: all .2s;  //アニメーション設定
+        transition: all .3s;  //アニメーション設定
     }
     @include max-width(767px) {
         top: 165px;

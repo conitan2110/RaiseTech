@@ -29,13 +29,3 @@ $(function(){
     $(this).removeClass('open');
   });
 });
-
-
-// 以下、ボツコード -------------------------------
-      // if ( $(".global-nav").hasClass('open') ){
-      //   $(".global-nav").removeClass('close');
-      // } else {
-      //   $(".global-nav").addClass('close');
-      // }
-
-      // window.location = window.location;

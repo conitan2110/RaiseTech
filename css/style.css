@@ -376,8 +376,8 @@ img {
   display: inline-block;
   padding: 18px 37px;
   border-radius: 5px;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 @media (max-width: 767px) {
   .info-wrap {
