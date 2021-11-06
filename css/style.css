@@ -238,7 +238,7 @@ img {
   position: relative;
 }
 @media (max-width: 1200px) {
-  .has-menu a::before {
+  .has-menu > a::before {
     display: block;
     content: "";
     position: absolute;
@@ -248,8 +248,9 @@ img {
     height: 2px;
     margin-top: -1px;
     background: #121212;
+    z-index: 300;
   }
-  .has-menu a::after {
+  .has-menu > a::after {
     display: block;
     content: "";
     position: absolute;
@@ -260,6 +261,29 @@ img {
     margin-top: -12px;
     background: #121212;
   }
+  .has-menu.open > a::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 23.55px;
+    right: 13px;
+    width: 24px;
+    height: 2px;
+    margin-top: -1px;
+    background: #121212;
+  }
+  .has-menu.open > a::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    height: 47.1px;
+    margin-top: 0;
+    background: #f7f7f7;
+  }
 }
 
 .sub-menu {
@@ -267,6 +291,7 @@ img {
   position: absolute;
   top: 70px;
   left: 0;
+  z-index: 300;
 }
 .sub-menu li {
   white-space: nowrap;
@@ -289,7 +314,6 @@ img {
     left: 0;
     background: #fff;
     width: 100%;
-    z-index: 1;
   }
   .sub-menu.open {
     position: static;
